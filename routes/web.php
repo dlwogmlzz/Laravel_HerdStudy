@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    // return view('welcome');
-    // url 받기
-    $url = route('posts.show', 10);
-    return "<a href='{$url}'>10번 게시물 보기</a>";
-});
+    return view('home');
+})->name('home');
+// 이름 부여 방법 -> name('home');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+// 이름 부여 방법 -> name('about');
 
 // 블레이드 제어문
 Route::get('/profile', function() {
@@ -57,4 +60,4 @@ Route::get('/posts', function() {
     // ]);
     // 위 코드 처럼 줄이 많아질때 [컴팩트 함수]를 사용한다.
     return view('posts', compact('posts'));
-});
+})->name('posts.index'); // ⚠️name을 부여를 해줘야 route('posts.index')를 사용할 수 있다.
