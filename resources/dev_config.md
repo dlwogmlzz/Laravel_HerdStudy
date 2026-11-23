@@ -58,3 +58,12 @@ HTTP 메서드와 URL 파라미터 다루기
 이름있는 라우트와 헬퍼 함수
 
 블레이드(blade) 템프릿 엔진이란?
+
+
+
+2026/11/23
+vite 패키지 의존성 설치
+HMR(Hot Module Replacement)기능 적용
+1. npm install - 설치
+2. npm run dev - 서버 띄우기
+3. npm run build - 배포

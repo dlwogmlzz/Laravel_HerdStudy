@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home1');
 })->name('home');
-// 이름 부여 방법 -> name('home');
+// 이름 부여 방법 -> name('home1');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about1');
 })->name('about');
 // 이름 부여 방법 -> name('about');
 
