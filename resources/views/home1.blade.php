@@ -1,4 +1,6 @@
 <x-layout title="홈 - 컴포넌트 메인">
 	<h1>컴포넌트 레이아웃 적용 완료!</h1>
 	<p>태그 형태로 감싸기만 하면 직관적으로 공통 레이아웃이 완성됩니다.</p>
+
+	<img src="{{ asset('images/logo.jpg') }}" alt="백종원 사진" width="240">
 </x-layout>

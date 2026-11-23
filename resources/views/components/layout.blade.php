@@ -5,11 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>{{ $title ?? '나의 라라벨 사이트' }}</title>
-	<style>
-		body {font-family:  sans-serif; margin: 0; padding: 20px;}
-		header {background: #e5e7eb; padding: 15px; margin-bottom: 20px; border-radius: 8px;}
-		nav a {margin-right: 15px; text-decoration: none; color: #2563eb; font-weight: bold;}
-	</style>
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 	<header>
