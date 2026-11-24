@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,10 +9,13 @@ Route::get('/', function () {
 })->name('home');
 // 이름 부여 방법 -> name('home1');
 
-Route::get('/about', function () {
-    return view('about1');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about1');
+// })->name('about');
 // 이름 부여 방법 -> name('about');
+
+// 위의 about라우터를 단일 ㅇ컨트롤러 형태로 작성하기
+Route::get('/about', AboutController::class)->name('about');
 
 // 블레이드 제어문
 Route::get('/profile', function() {
@@ -63,5 +67,11 @@ Route::get('/members', function() {
 //     return view('posts', compact('posts'));
 // })->name('posts.index'); // ⚠️name을 부여를 해줘야 route('posts.index')를 사용할 수 있다.
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+// 컨트롤러 그룹화하기(group)
+Route::controller(PostController::class)->group(function (){
+    Route::get('/posts', 'index')->name('posts.index');
+    Route::get('/posts/{id}', 'show')->name('posts.show'); 
+});
+    
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+// Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');

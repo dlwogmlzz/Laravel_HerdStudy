@@ -67,3 +67,14 @@ HMR(Hot Module Replacement)기능 적용
 1. npm install - 설치
 2. npm run dev - 서버 띄우기(HMR로 수정하면 바로 반영됨.)
 3. npm run build - 배포
+
+2026/11/24
+
+invokable 컨트롤러 생성
+php artisan make:controller AboutController --invokable
+
+route 연결 list로 확인
+php artisan route:list
+
+route 연결 list로 posts만 확인
+php artisan route:list --path=posts
