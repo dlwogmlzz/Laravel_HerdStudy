@@ -12,6 +12,7 @@
 		<h2>My Laravel App (Component Base)</h2>
 		<nav>
 			<a href="/">홈</a>
+			<a href="/posts">게시판</a>
 			<a href="/about">소개</a>
 		</nav>
 	</header>

@@ -36,7 +36,7 @@ The [my-first-app.test] site will now serve traffic over HTTP.
 code . - 비주얼 스튜디오 열기
 
 그다음 비주얼 스튜디오 코드의 확장기능에서 
-①PHP Intelephense 설치
+①PHP Intelephense 설치(임포트등 자동 삽입?)
 ②Laravel Extra Intellisense 설치
 ③Laravel Blade Snippets 설치
 ④Laravel Blade formatter(ctrl + shift + f로 뒤죽박죽 코드 자동 정렬기능)
@@ -65,5 +65,5 @@ HTTP 메서드와 URL 파라미터 다루기
 vite 패키지 의존성 설치
 HMR(Hot Module Replacement)기능 적용
 1. npm install - 설치
-2. npm run dev - 서버 띄우기
+2. npm run dev - 서버 띄우기(HMR로 수정하면 바로 반영됨.)
 3. npm run build - 배포

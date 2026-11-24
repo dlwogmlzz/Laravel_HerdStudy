@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,19 +46,22 @@ Route::get('/members', function() {
     ]);
 });
 
-Route::get('/posts', function() {
-    $posts = [
-        ['title' => '첫 번째 게시글', 'writer' => '홍길동'],
-        ['title' => '두 번째 게시글', 'writer' => '김찰스'],
-        ['title' => '세 번째 게시글', 'writer' => '강호동'],
-    ];
-    // $posts = []; // 게시글이 없는 경우
+// Route::get('/posts', function() {
+//     $posts = [
+//         ['title' => '첫 번째 게시글', 'writer' => '홍길동'],
+//         ['title' => '두 번째 게시글', 'writer' => '김찰스'],
+//         ['title' => '세 번째 게시글', 'writer' => '강호동'],
+//     ];
+//     // $posts = []; // 게시글이 없는 경우
 
-    // return view('posts', [
-    //     'posts' => $posts,
-    //     'posts' => $posts,
-    //     'posts' => $posts,
-    // ]);
-    // 위 코드 처럼 줄이 많아질때 [컴팩트 함수]를 사용한다.
-    return view('posts', compact('posts'));
-})->name('posts.index'); // ⚠️name을 부여를 해줘야 route('posts.index')를 사용할 수 있다.
+//     // return view('posts', [
+//     //     'posts' => $posts,
+//     //     'posts' => $posts,
+//     //     'posts' => $posts,
+//     // ]);
+//     // 위 코드 처럼 줄이 많아질때 [컴팩트 함수]를 사용한다.
+//     return view('posts', compact('posts'));
+// })->name('posts.index'); // ⚠️name을 부여를 해줘야 route('posts.index')를 사용할 수 있다.
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
